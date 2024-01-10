@@ -2,16 +2,14 @@
 import pandas as pd
 import os
 import streamlit as st
-# Define the folder path where your Excel files are located
-folder_path = "/Users/ybkmykeyz/Desktop/NBA Info"
 
-# Load each Excel file into a separate DataFrame
+player_info_versues_defense_sheet_id = '14DVdKkoMZWjk9nGn_vLUrZGyH8pikrzwP0WsUcodCcg'
+todays_games_sheet_id = '1gguGzhBjIv2bXTJ7wCPGDlLrmyN1aZy-8VyjDD7FIQQ'
+player_log_id = '1xvzgQjHJoZ4MjusyCZGfdLy_z6pznzBzgIcMBCdzQJg'
 
-player_info_versues_defense = pd.read_excel(os.path.join(folder_path, "player_info_versues_defense_s.xlsx"))
-player_log = pd.read_excel(os.path.join(folder_path, "player_log.xlsx"))
-todays_games = pd.read_excel(os.path.join(folder_path, "todays_games.xlsx"))
-player_stats = pd.read_excel(os.path.join(folder_path, "player_stats.xlsx"))
-team_defensive_stats_combined_player = pd.read_excel(os.path.join(folder_path, "team_defensive_stats_combined_player.xlsx"))
+player_info_versues_defense = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{player_info_versues_defense_sheet_id}/export?format=csv")
+todays_games = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{todays_games_sheet_id}/export?format=csv")
+player_log  = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{player_log_id}/export?format=csv")
 
 # Remove text after the dot in column names
 # %%
